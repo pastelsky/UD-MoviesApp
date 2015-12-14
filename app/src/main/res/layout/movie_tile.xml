@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="movie" type="com.example.shubhamkanodia.moviesapp.Pojos.Results" />
+    </data>
+
+    <FrameLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/movie_poster"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="@dimen/cover_height_port"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:posterId="@{movie.poster_path}"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#44000000"
+            android:id="@+id/title_background"
+            android:padding="8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:ellipsize="end"
+                android:textSize="14sp"
+                android:id="@+id/tvTitle"
+                android:maxLines="2"
+                android:paddingRight="24sp"
+                android:layout_alignParentLeft="true"
+                android:text="@{movie.title}" />
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/heart_icon_size"
+                    android:layout_height="@dimen/heart_icon_size"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/noun_23002_cc"
+                    android:adjustViewBounds="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#77ffffff"
+                    android:paddingLeft="4dp"
+                    android:text='@{(int)Double.parseDouble(movie.popularity) + ""}' />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        </FrameLayout>
+
+</layout>

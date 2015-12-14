@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#602a53</color>
+    <color name="colorPrimaryDark">#461d3c</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="background_material_light">#fdfdfd</color>
+
+    <color name="icon_color">#ff666666</color>
+    <color name="separator_color">#efefef</color>
+    <color name="dark_bg">#333</color>
+
+
+</resources>
