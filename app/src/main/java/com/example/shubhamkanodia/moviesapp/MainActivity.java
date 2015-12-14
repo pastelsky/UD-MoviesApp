@@ -43,7 +43,7 @@ import retrofit.Retrofit;
 public class MainActivity extends AppCompatActivity {
 
 
-    private static final String API_KEY = /*Insert your API KEY here*/ ;
+    private static String API_KEY;
     private static final String SORT_ORDER_POPULARITY = "popularity.desc";
     private static final String SORT_ORDER_RATING = "vote_average.desc";
     private static final int MINIMUM_VOTE_COUNT = 200;
@@ -68,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
         DataBindingUtil.setContentView(this, R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        API_KEY = getString(R.string.api_key);
 
         rvMovies = (RecyclerView) findViewById(R.id.rvMovies);
         lvempty = (LinearLayout) findViewById(R.id.lvEmpty);
